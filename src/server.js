@@ -16,6 +16,10 @@ app.get('/projects', (req, res) => {
     res.status(200).send('Welcome to the projects page!');
 });
 
+app.get('/bad', (req, res, next) => {
+    next('We have an error');
+});
+
 app.use('*', notFound);
 app.use(errorHandler);
 

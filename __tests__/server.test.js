@@ -16,4 +16,12 @@ describe('API Server', () => {
 
         expect(response.status).toEqual(404);
     });
+
+    test('handles error', async () => {
+        const response = await mockRequest.get('/bad');
+
+        console.log(response);
+        expect(response.status).toEqual(500);
+        expect(response.body.route).toEqual('/bad');
+    });
 });
