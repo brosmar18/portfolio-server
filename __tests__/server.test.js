@@ -10,4 +10,10 @@ describe('API Server', () => {
         expect(response.text).toBeTruthy();
         expect(response.text).toEqual('Logger middleware!');
     });
+
+    test('handles invalid requests', async () => {
+        const response = await mockRequest.get('/green');
+
+        expect(response.status).toEqual(404);
+    });
 });
