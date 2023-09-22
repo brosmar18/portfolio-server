@@ -1,7 +1,7 @@
 'use strict';
 
 const logger = (req, res, next) => {
-    req.log = 'This is a log!';
+    req.log = 'Logger middleware!';
 
     next();
 };
