@@ -12,7 +12,7 @@ describe('API Server', () => {
     });
 
     test('handles invalid requests', async () => {
-        const response = await mockRequest.get('/green');
+        const response = await mockRequest.get('/invalid-route');
 
         expect(response.status).toEqual(404);
     });
